@@ -20,4 +20,4 @@ while 0 <= loc <= 10:
             break
     times[loc] = times[loc] + 1
     print times
-print 'That took ', track_steps, ' steps.'
+print 'That took ', track_steps, ' steps. Congratulations!'
