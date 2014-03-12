@@ -4,11 +4,11 @@
 # <codecell>
 
 import pandas as pd
-import numpy as np
-from scipy.optimize import minimize
-from matplotlib.pyplot import plot, scatter, show
+# import numpy as np
+# from scipy.optimize import minimize
+from matplotlib.pyplot import show
 from pandas.io.data import DataReader
-from datetime import datetime
+from datetime import datetime, timedelta
 
 # <codecell>
 
@@ -16,8 +16,8 @@ from datetime import datetime
 
 # <codecell>
 
-start = datetime(2013,1,8)
 end = datetime.today()
+start = end - timedelta(days=365)
 
 # stock list
 ticker = ['AAPL', 'AMZN', 'ATVI', 'BBBY', 'BRK.B', 'COST', 'DDD', 'DIS', 'DISCK', 'F', 'GLD', 'SBUX', 'SPY']
