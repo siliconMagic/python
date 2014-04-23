@@ -25,17 +25,19 @@ def solve(puzzle):
             if eval(equation):
                 return equation
 
-if __name__ == '__main__':
-    import sys
-    for puzzle in sys.argv[1:]:
-        print(puzzle)
-        solution = solve(puzzle)
-        if solution:
-            print(solution)
+# if __name__ == '__main__':
+#     import sys
+#     for puzzle in sys.argv[1:]:
+#         print(puzzle)
+#         solution = solve(puzzle)
+#         if solution:
+#             print(solution)
 
 while True:
-    puzzle = input('Input a word equation [type "quit" to exit]: ')
-#    puzzle = 'DAVE + SIENNA == KEN + SINGER'
+    # puzzle = input('Input a word equation [type "quit" to exit]: ')
+    puzzle = 'DAVE + SIENNA == KEN + SINGER'
+    puzzle = 'SEND + MORE == MONEY'
+    puzzle = 'SIE * NNA == MARIA'
     print(puzzle)
     if puzzle == 'quit':
         print('Thanks for playing!')
@@ -43,14 +45,12 @@ while True:
     solution = solve(puzzle)
     if solution:
         print(solution)
-#        break
+        break
     else:
-        again = input("Couldn't find a solution to that one. Try again? [y/n]")
-        if again == 'n':
-            break
-#        break
-        
-        
+        print("Couldn't find a solution to that one.")
+        break
+
+
 # Copyright (c) 2009, Raymond Hettinger, All rights reserved.
 # Ported to Python 3 and modified by Mark Pilgrim
 # original: http://code.activestate.com/recipes/576615/

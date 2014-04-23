@@ -16,11 +16,11 @@ def xirr(transactions):
             else:
                 guess -= step
                 step /= 2.0
-    return guess-1
+    return guess - 1
 
 from datetime import date
-tas = [ (date(2006, 1, 24), -39967),
-    (date(2008, 2, 6), -19866),
-    (date(2010, 10, 18), 245706),
-    (date(2013, 9, 14), 52142)]
+tas = [(date(2006, 1, 24), -39967),
+       (date(2008, 2, 6), -19866),
+       (date(2010, 10, 18), 245706),
+       (date(2013, 9, 14), 52142)]
 print(xirr(tas))

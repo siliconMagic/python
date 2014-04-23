@@ -41,4 +41,4 @@ def mc_problem(start = (3,3,1,0,0,0), goal=None):
 
 answer = mc_problem(start = (7,6,1,0,0,0))
 for step in answer:
-	print step
+	print(step)

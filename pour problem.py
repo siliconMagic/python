@@ -26,4 +26,4 @@ def successors(x, y, X, Y):
 
 
 solution = pour_problem(7, 9, 8)
-print solution
+print(solution)

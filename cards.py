@@ -76,21 +76,21 @@ def hand_percentages(n=100*1000):
 	"Sample n random hands and print a table of percentages for each type of hand."
 	counts = [0] * 11
 	for i in range(n):
-		cards_dealt, whole_cards = deal(1, deck = joker_deck)
+		cards_dealt, whole_cards = deal(4, deck = joker_deck)
 		for hand in cards_dealt:
 			ranking = best_hand(hand, cards_dealt)
 			counts[ranking] += 1
 	for i in reversed(range(11)):
-		print "%14s: %6.3f %%" % (hand_names[i], 100.*counts[i]/n)
+		print ("{:14s}  {:.2%}".format(hand_names[i], counts[i]/n))
 
-# hand_percentages()
+hand_percentages()
 
 # 7-card Stud using a deal(players, cards, whole cards)
 def seven_card_stud(n=10):
 	for i in range(n):
 		cards_dealt, whole_cards = deal(3, 5, 2)
-		print 'whole: ', whole_cards
-		print 'hands: ', cards_dealt
+		print ('whole: ', whole_cards)
+		print ('hands: ', cards_dealt)
 		winner = []
 		for player in cards_dealt:
 			player_hand_ranks = []
@@ -99,8 +99,8 @@ def seven_card_stud(n=10):
 			best_hand = max(player_hand_ranks)
 			print(best_hand)
 			winner.append(best_hand)
-		print 'winner: ', max(winner)
-		print '~='*30
+		print ("winner: ", max(winner))
+		print ('~='*30)
 
 seven_card_stud()
 		
