@@ -110,4 +110,4 @@ def add_to_frontier(frontier, path):
 
 answer = bridge_problem3(frozenset((1,2,5,10),))
 for step in answer:
-    print step
+    print (step)

@@ -17,6 +17,7 @@ def chain(cache, n):
         if n % 2: cache[n] = 1 + chain(cache, 3*n + 1)
         else: cache[n] = 1 + chain(cache, n/2)
     return cache[n]
+
 m,n = 0,0
 for i in range(1, 1000000):
     c = chain(cache, i)
