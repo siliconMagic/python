@@ -34,10 +34,10 @@ def solve(puzzle):
 #             print(solution)
 
 while True:
-    # puzzle = input('Input a word equation [type "quit" to exit]: ')
-    puzzle = 'DAVE + SIENNA == KEN + SINGER'
+#    puzzle = input('Input a word equation [type "quit" to exit]: ')
+#    puzzle = 'DAVE + SIENNA == KEN + SINGER'
     puzzle = 'SEND + MORE == MONEY'
-    puzzle = 'SIE * NNA == MARIA'
+#    puzzle = 'SIE * NNA == MARIA'
     print(puzzle)
     if puzzle == 'quit':
         print('Thanks for playing!')

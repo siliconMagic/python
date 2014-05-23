@@ -39,6 +39,6 @@ def mc_problem(start = (3,3,1,0,0,0), goal=None):
 						frontier.append(path2)
 		return Fail
 
-answer = mc_problem(start = (7,6,1,0,0,0))
+answer = mc_problem(start = (4,3,1,0,0,0))
 for step in answer:
 	print(step)
