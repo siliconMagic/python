@@ -72,9 +72,9 @@ def make_pattern(number):
     while len(s) < 8:
         s = '0' + s
 #    print s
-    for i in range(len(s)):
+    for d in s:
 #        print i, s[i]
-        if s[i] == '0':
+        if d == '0':
             pattern.append('.')
         else:
             pattern.append('x')
@@ -115,32 +115,31 @@ def cellular_automaton(string, pattern, generations):
 #    print string
     while n <= generations:
         string = make_next_gen(string, table)
-        n = n + 1
+        n += 1
     return string
         
 
 print (cellular_automaton('.x.x.x.x.', 17, 2))
 #>>> xxxxxxx..
-print cellular_automaton('.x.x.x.x.', 249, 3)
+print (cellular_automaton('.x.x.x.x.', 249, 3))
 #>>> .x..x.x.x
-print cellular_automaton('...x....', 125, 1)
+print (cellular_automaton('...x....', 125, 1))
 #>>> xx.xxxxx
-print cellular_automaton('...x....', 125, 2)
+print (cellular_automaton('...x....', 125, 2))
 #>>> .xxx....
-print cellular_automaton('...x....', 125, 3)
+print (cellular_automaton('...x....', 125, 3))
 #>>> .x.xxxxx
-print cellular_automaton('...x....', 125, 4)
+print (cellular_automaton('...x....', 125, 4))
 #>>> xxxx...x
-print cellular_automaton('...x....', 125, 5)
+print (cellular_automaton('...x....', 125, 5))
 #>>> ...xxx.x
-print cellular_automaton('...x....', 125, 6)
+print (cellular_automaton('...x....', 125, 6))
 #>>> xx.x.xxx
-print cellular_automaton('...x....', 125, 7)
+print (cellular_automaton('...x....', 125, 7))
 #>>> .xxxxx..
-print cellular_automaton('...x....', 125, 8)
+print (cellular_automaton('...x....', 125, 8))
 #>>> .x...xxx
-print cellular_automaton('...x....', 125, 9)
+print (cellular_automaton('...x....', 125, 9))
 #>>> xxxx.x.x
-print cellular_automaton('...x....', 125, 10)
+print (cellular_automaton('...x....', 125, 10))
 #>>> ...xxxxx
-
