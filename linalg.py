@@ -1,5 +1,5 @@
 from numpy import *
-import scipy
+# import scipy
 import matplotlib.pyplot as plt
 
 c1,c2= 5.0,2.0

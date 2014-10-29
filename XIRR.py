@@ -23,4 +23,6 @@ tas = [(date(2006, 1, 24), -39967),
        (date(2008, 2, 6), -19866),
        (date(2010, 10, 18), 245706),
        (date(2013, 9, 14), 52142)]
-print(xirr(tas))
+
+print(tas)
+print("IRR for test data = {:.2%}".format(xirr(tas)))

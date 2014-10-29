@@ -1,3 +1,7 @@
+import pandas
+import numpy as np
+
+
 def get_shrunk_covariance_matrix(x, shrink=None):
         """Computes a covariance matrix that is "shrunk" towards a structured estimator. Code
             borrows heavily from the MATLAB implementation available by the authors online.

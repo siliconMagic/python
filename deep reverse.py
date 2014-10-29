@@ -30,13 +30,13 @@ def deep_reverse(l):
 #For example,
 
 p = [1, [2, 3, [4, [5, 6]]]]
-print deep_reverse(p)
+print (deep_reverse(p))
 #>>> [[[[6, 5], 4], 3, 2], 1]
-print p
+print( p)
 #>>> [1, [2, 3, [4, [5, 6]]]]
 
 q =  [1, [2,3], 4, [5,6]]
-print deep_reverse(q)
+print (deep_reverse(q))
 #>>> [ [6,5], 4, [3, 2], 1]
-print q
+print( q)
 #>>> [1, [2,3], 4, [5,6]]

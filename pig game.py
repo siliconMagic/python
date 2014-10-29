@@ -114,4 +114,4 @@ def test():
     assert(max_wins((0, 11, 0, 24)))  == "roll"
     return 'tests pass'
 
-print test()
+print(test())
