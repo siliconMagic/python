@@ -1,4 +1,4 @@
-import pandas
+import pandas as pd
 import numpy as np
 
 
@@ -20,7 +20,7 @@ def get_shrunk_covariance_matrix(x, shrink=None):
         if x is None:
             raise ValueError('No covariance matrix defined')
 
-        if type(x) == pandas.core.frame.DataFrame:
+        if type(x) == pd.core.frame.DataFrame:
             cov = x.as_matrix()
         elif type(x) == np.ndarray:
             cov = x
@@ -66,4 +66,4 @@ def get_shrunk_covariance_matrix(x, shrink=None):
         shrinkage = max(0.0, min(1.0, k / t))
         sigma = np.dot(shrinkage, prior) + np.dot((1 - shrinkage), sample)
 
-        return pandas.DataFrame(sigma, index=index, columns=columns), shrinkage
+        return pd.DataFrame(sigma, index=index, columns=columns), shrinkage

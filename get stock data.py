@@ -8,7 +8,7 @@ from datetime import datetime
 
 start = datetime(2011,11,1)
 end = datetime.today()
-L = ['SPY', 'SBUX', 'DISCK', 'DIS', 'COST', 'GLD'] # stock list
+L = ['SPY', 'SBUX', 'DISCK', 'DIS', 'COST', 'AAPL'] # stock list
 
 #set up DataFrames
 daily_stock_price = pd.DataFrame(index=pd.date_range(start, end)) 
