@@ -12,11 +12,12 @@ def collatz (n):
 
 big_list = []
 
-for n in range(100):
+for n in range(2000000):
 	big_list.append(collatz(n))
 
-print(big_list)
+# print(big_list)
 
 plt.plot(big_list)
 plt.show()
+print(max(big_list))
 

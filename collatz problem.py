@@ -19,10 +19,11 @@ def chain(cache, n):
     return cache[n]
 
 m,n = 0,0
-for i in range(1, 1000000):
+for i in range(1, 100000):
     c = chain(cache, i)
     if c > m: m,n = c,i
 print (n)
+
 
 def print_chain(n):
     link = n
