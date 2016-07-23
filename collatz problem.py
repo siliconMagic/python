@@ -19,10 +19,10 @@ def chain(cache, n):
     return cache[n]
 
 m,n = 0,0
-for i in range(1, 100000):
+for i in range(1, 10000000):
     c = chain(cache, i)
     if c > m: m,n = c,i
-print (n)
+print (n, " is the high number")
 
 
 def print_chain(n):
@@ -36,6 +36,6 @@ def print_chain(n):
         the_chain.append(link)
     return the_chain    
         
-print(print_chain(n))
+print(len(print_chain(n)), " steps")
 plot(print_chain(n))
 show()

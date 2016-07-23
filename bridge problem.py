@@ -1,10 +1,10 @@
 # -----------------
 # User Instructions
-# 
-# Modify the bridge_problem(here) function so that it 
-# tests for goal later: after pulling a state off the 
-# frontier, not when we are about to put it on the 
-# frontier. 
+#
+# Modify the bridge_problem(here) function so that it
+# tests for goal later: after pulling a state off the
+# frontier, not when we are about to put it on the
+# frontier.
 
 def successors(state):
     """Return a dict of {state:action} pairs.  A state is a (here, there, t) tuple,
@@ -22,8 +22,8 @@ def successors(state):
                       there - frozenset([a, b, 'light'])),
                      (a, b, '<-'))
                     for a in there if a is not 'light'
-                    for b in there if b is not 'light') 
-        
+                    for b in there if b is not 'light')
+
 def path_cost(path):
     """The total cost of a path (which is stored in a tuple
     with the final action."""
@@ -33,12 +33,12 @@ def path_cost(path):
     else:
         action, total_cost = path[-2]
         return total_cost
-        
+
 def action_cost(action):
     """Returns the cost (a number) of an action in the
     bridge problem."""
-    # An action is an (a, b, arrow) tuple; a and b are 
-    # times; arrow is a string. 
+    # An action is an (a, b, arrow) tuple; a and b are
+    # times; arrow is a string.
     a, b, arrow = action
     return max(a, b)
 

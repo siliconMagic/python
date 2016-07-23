@@ -15,8 +15,8 @@ from bokeh.plotting import show
 data = 1 + np.random.randn(20, 6)
 
 # And then just call the violinplot from Seaborn
-sns.violinplot(data, color="Set3")
+sns.violinplot(data)
 
 plt.title("Seaborn violin plot in bokeh.")
 
-show(mpl.to_bokeh(name="violin"))
+show(mpl.to_bokeh())
