@@ -2,7 +2,7 @@ import random
 import itertools
 
 deck = [r+s for r in '23456789TJQKA' for s in 'SHDC']
-joker_deck =  deck + ['?R', '?B']
+joker_deck = deck + ['?R', '?B']
 double_deck = 2 * deck
 
 def deal(numhands, n=5, whole_cards=0, deck = [r+s for r in '23456789TJQKA' for s in 'SHDC']):
@@ -13,7 +13,7 @@ def hand_rank(hand):
 	"Return a value indicating how high the hand ranks."
 	# counts is the count of each rank; ranks lists corresponding ranks
 	# e.g. '7 T 7 9 7' => counts = (3, 1, 1); ranks = (7, 10, 9)
-	groups = group(['--23456789TJQKA'.index(r) for r,s in hand])
+	groups = group(['--23456789TJQKA'.index(r) for r, s in hand])
 	counts, ranks = unzip(groups)
 	if ranks == (14, 5, 4, 3, 2):
 		ranks = (5, 4, 3, 2, 1)
@@ -21,7 +21,7 @@ def hand_rank(hand):
 	flush = len(set([s for r,s in hand])) == 1
 	return max(count_rankings[counts], 4*straight + 5*flush), ranks
 
-count_rankings = {(5,):10, (4, 1):7, (3, 2):6, (3, 1, 1):3, (2, 2, 1):2, (2, 1, 1, 1):1, (1, 1, 1, 1, 1):0}	
+count_rankings = {(5,):10, (4, 1):7, (3, 2):6, (3, 1, 1):3, (2, 2, 1):2, (2, 1, 1, 1):1, (1, 1, 1, 1, 1):0}
 
 def group(items):
 	"Return a list of [(count, x)...], highest count first, then highest x first."
@@ -89,8 +89,8 @@ hand_percentages()
 def seven_card_stud(n=10):
 	for i in range(n):
 		cards_dealt, whole_cards = deal(3, 5, 2)
-		print ('whole: ', whole_cards)
-		print ('hands: ', cards_dealt)
+		print('whole: ', whole_cards)
+		print('hands: ', cards_dealt)
 		winner = []
 		for player in cards_dealt:
 			player_hand_ranks = []
@@ -99,8 +99,8 @@ def seven_card_stud(n=10):
 			best_hand = max(player_hand_ranks)
 			print(best_hand)
 			winner.append(best_hand)
-		print ("winner: ", max(winner))
-		print ('~='*30)
+		print("winner: ", max(winner))
+		print('~='*30)
 
 seven_card_stud()
 		

@@ -12,13 +12,13 @@ def successors(state):
     the light, and t is a number indicating the elapsed time."""
     here, there = state
     if 'light' in here:
-        return dict(((here  - frozenset([a,b, 'light']),
+        return dict(((here  - frozenset([a, b, 'light']),
                       there | frozenset([a, b, 'light'])),
                      (a, b, '->'))
                     for a in here if a is not 'light'
                     for b in here if b is not 'light')
     else:
-        return dict(((here  | frozenset([a,b, 'light']),
+        return dict(((here  | frozenset([a, b, 'light']),
                       there - frozenset([a, b, 'light'])),
                      (a, b, '<-'))
                     for a in there if a is not 'light'

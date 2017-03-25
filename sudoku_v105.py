@@ -114,11 +114,11 @@ class sudoku:
         #print "Updating (%i,%i) to be %i..."  % (self.row, self.col, x)
         #Update the possibilies in this row...
         for row in range(0,9) :
-            if row <> set_row :
+            if row != set_row :
                 self.cell_exclude(row,set_col,x)
         #Update the possibilies in this col...
         for col in range(0,9) :
-            if col <> set_col :
+            if col != set_col :
                 self.cell_exclude(set_row,col,x)
         #Update the possibilies in this 3x3 square...
         for triplet in TRIPLETS :
@@ -130,7 +130,7 @@ class sudoku:
         cols.remove(set_col)
         for row in rows :
             for col in cols :
-                assert row <> set_row or col <> set_col 
+                assert row != set_row or col != set_col 
                 #print "Updating (%i,%i) to be %i, excluding %i from (%i, %i)" \
                 #% (self.row, self.col, x, x, row, col)
                 self.cell_exclude(row,col,x)
@@ -358,7 +358,7 @@ class sudoku:
                             try:
                                 sudoku_copy.set_cell(row,col,x)
                                 sudoku_copy.check(level=1)
-                            except AssertionError, e :
+                            except AssertionError :
                                 #Leads to an error :)
                                 #This means that this square cannot be x
                                 #print e
@@ -395,7 +395,7 @@ class sudoku:
                                 #sudoku_copy.check()
                                 #sudoku_copy.one_level_supposition()
                                 sudoku_copy.check(level=2)
-                            except AssertionError, e :
+                            except AssertionError :
                                 #Leads to an error :)
                                 #This means that this square cannot be x
                                 #print e
@@ -416,7 +416,7 @@ class sudoku:
         #print "Two level supposition done"
 
 if __name__ == "__main__" and RUN_BUILT_IN_TESTS :
-    print "Running built in tests..."
+    print ("Running built in tests...")
     
     tests = []
     
@@ -593,7 +593,7 @@ if __name__ == "__main__" and RUN_BUILT_IN_TESTS :
 
     for test in tests :
         name = test[0]
-        print "Running test: " + name
+        print ("Running test: " + name)
 
         x = sudoku(test[1])
 
@@ -603,26 +603,26 @@ if __name__ == "__main__" and RUN_BUILT_IN_TESTS :
         assert x.as_test_list() == test[2], "Simple check failed"
 
         if test[3] is not None and not x.solved() :
-            if test[3] <> test[2]: print "Overlapping (aka slicing and dicing) should helps"
+            if test[3] != test[2]: print ("Overlapping aka slicing and dicing should help")
             x.overlapping_3x3_and_row_or_col()
             #x.check()
             assert x.as_test_list() == test[3], "Overlapping failed"
         
         if test[4] is not None and not x.solved() :
-            if test[4] <> test[3]: print "One level supposition helps"
+            if test[4] != test[3]: print ("One level supposition helps")
             x.one_level_supposition()
             #x.check()
             assert x.as_test_list() == test[4], "One level supposition failed"
 
         if test[5] is not None and not x.solved() :
-            if test[5] <> test[4]: print "Two level supposition helps"
+            if test[5] != test[4]: print ("Two level supposition helps")
             x.two_level_supposition()
             #x.check()
             assert x.as_test_list() == test[5], "Two level supposition failed"
-    print "Builtin tests passed"
+    print ("Builtin tests passed")
     
 if __name__ == "__main__" and RUN_TEST_FILES :
-    print "Running test files"
+    print ("Running test files")
     #Using only check() and one_level_suposition(), completes 82 out of 95 in this test file, http://magictour.free.fr/top95
     import os
     import time
@@ -631,7 +631,7 @@ if __name__ == "__main__" and RUN_TEST_FILES :
             #Try without the extension...
             test_file = test_file[:-4]
         if os.path.isfile(test_file) :
-            print "Running tests from file %s" % test_file
+            print ("Running tests from file %s" % test_file)
             input_file = open(test_file, "r")
             score = 0
             count = 0
@@ -648,7 +648,7 @@ if __name__ == "__main__" and RUN_TEST_FILES :
                     line = line[:-1]
                 if len(line)==81 :
                     count=count+1
-                    print "%i - [%s]" % (count, line),
+                    print ("%i - [%s]" % (count, line)),
                     x = sudoku(line)
                     x.check(level=2)
                     #x.overlapping_3x3_and_row_or_col()
@@ -656,25 +656,25 @@ if __name__ == "__main__" and RUN_TEST_FILES :
                     #x.one_level_supposition()
                     #x.check()
                     if not x.solved() :
-                        print "Trying level two",
+                        print ("Trying level two"),
                         #x.two_level_supposition()
                         x.check(level=3)
                     if x.solved() :
-                        print " - Done"
+                        print (" - Done")
                         score=score+1
                     else :
-                        print "- Failed"
-                        print x.as_test_list()
+                        print ("- Failed")
+                        print (x.as_test_list())
                 else :
-                    print "Bad line:\n%s" % line
+                    print ("Bad line:\n%s" % line)
             job_time = time.time()-start_time
             input_file.close()
-            print "Score %i / %i in %0.2f seconds" % (score,count,job_time)
+            print ("Score %i / %i in %0.2f seconds" % (score,count,job_time))
         else :
-            print "Could not find test file " + test_file
+            print ("Could not find test file " + test_file)
     
 if __name__ == "__main__" :
-    print "Running demonstration..."
+    print ("Running demonstration...")
     
     t = sudoku(["800500930",
                    "050000000",
@@ -686,20 +686,20 @@ if __name__ == "__main__" :
                    "104080000",
                    "000406007"])
                    
-    print "Before:"
+    print ("Before:")
     #print t.as_test_list()
-    print t
+    print (t)
 
-    print "Check:"
+    print ("Check:")
     t.check()
-    print t
+    print (t)
 
-    print "overlapping_3x3_and_row_or_col:"
+    print ("overlapping_3x3_and_row_or_col:")
     t.check(level=1)
-    print t
+    print (t)
 
-    print "supposition:"
+    print ("supposition:")
     t.check(level=2)
     #print t.as_test_list()
-    print t
+    print (t)
 

@@ -5,7 +5,7 @@ Original: http://danverbraganza.com/writings/hangman-in-3-lines-of-python
 Requirements:
   A dictionary file at /usr/share/dict/words
 Usage:
-  $ python hangman.py 
+  $ python hangman.py
 Released under the MIT License. (Re)written by Arun Ravindran http://arunrocks.com
 """
 
