@@ -46,6 +46,11 @@ def elapsed_time(path):
     return path[-1][2]
 
 def bridge_problem3(here):
+
+    '''
+    bridge_problem3 docstring
+    '''
+
     start = (frozenset(here) | frozenset(['light']), frozenset())
     return lowest_cost_search(start, successors, all_over, action_cost)
 
@@ -78,7 +83,7 @@ def bridge_problem2(here):
     here = frozenset(here) | frozenset(['light'])
     explored = set() # set of states we have visited
     # State will be a (people-here, people-there, time-elapsed)
-    frontier = [ [(here, frozenset())] ] # ordered list of paths we have blazed
+    frontier = [[(here, frozenset())]] # ordered list of paths we have blazed
     while frontier:
         path = frontier.pop(0)
         here1, there1 = state1 = final_state(path)
@@ -108,6 +113,6 @@ def add_to_frontier(frontier, path):
     frontier.append(path)
     frontier.sort(key=path_cost)
 
-answer = bridge_problem3(frozenset((1,2,5,10),))
+answer = bridge_problem3(frozenset((1, 2, 7, 11),))
 for step in answer:
-    print (step)
+    print(step)

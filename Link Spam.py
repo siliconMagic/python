@@ -58,17 +58,18 @@ def compute_ranks(graph, k):
 
 g = {'a': ['a', 'b', 'c'], 'b':['a'], 'c':['d'], 'd':['a']}
 
-print compute_ranks(g, 0) # the a->a link is reciprocal
+print ( compute_ranks(g, 0) ) # the a->a link is reciprocal
 #>>> {'a': 0.26676872354238684, 'c': 0.1216391112164609,
 #     'b': 0.1216391112164609, 'd': 0.1476647842238683}
 
-print compute_ranks(g, 1) # a->a, a->b, b->a links are reciprocal
+print ( compute_ranks(g, 1) ) # a->a, a->b, b->a links are reciprocal
 #>>> {'a': 0.14761759762962962, 'c': 0.08936469270123457,
 #     'b': 0.04999999999999999, 'd': 0.12202199703703702}
 
-print compute_ranks(g, 2)
+print ( compute_ranks(g, 2) )
 # a->a, a->b, b->a, a->c, c->d, d->a links are reciprocal
 # (so all pages end up with the same rank)
 #>>> {'a': 0.04999999999999999, 'c': 0.04999999999999999,
 #     'b': 0.04999999999999999, 'd': 0.04999999999999999}
 
+print(compute_ranks(g, 3))

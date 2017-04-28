@@ -55,15 +55,11 @@ def stirling(n, k):
         else:
                 return k * stirling(n - 1, k) + stirling(n - 1, k - 1)
 
-
-    
-
 def bell(n):
         sum = 0
         for i in range(1, n+1):
                 sum = sum + stirling(n, i)
         return sum
-    
 
 
 print stirling(1,1)

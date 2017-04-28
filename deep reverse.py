@@ -11,32 +11,41 @@
 # p is a list and False if it is not.
 
 def is_list(p):
+
+    '''
+    docstring
+    '''
+
     return isinstance(p, list)
 
+
 def deep_reverse(l):
-	# l.reverse()
-	# for e in l:
-	# 	if is_list(e):
-	# 		deep_reverse(e)
-	# return l
-	if l == [] or type(l) == int or type(l) == str:
-		return l
-	else:
-		return deep_reverse(l[1:]) + [deep_reverse(l[0])]
 
+    '''
+    docstring
+    '''
 
+  # l.reverse()
+  # for e in l:
+  #   if is_list(e):
+  #   deep_reverse(e)
+  # return l
+    if l == [] or type(l) == int or type(l) == str:
+        return l
+    else:
+        return deep_reverse(l[1:]) + [deep_reverse(l[0])]
 
 
 #For example,
 
 p = [1, [2, 3, [4, [5, 6]]]]
-print (deep_reverse(p))
+print(deep_reverse(p))
 #>>> [[[[6, 5], 4], 3, 2], 1]
-print( p)
+print(p)
 #>>> [1, [2, 3, [4, [5, 6]]]]
 
 q =  [1, [2,3], 4, [5,6]]
-print (deep_reverse(q))
+print(deep_reverse(q))
 #>>> [ [6,5], 4, [3, 2], 1]
-print( q)
+print(q)
 #>>> [1, [2,3], 4, [5,6]]
