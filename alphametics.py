@@ -3,7 +3,7 @@
 >>> alphametics.solve('SEND + MORE == MONEY')
 '9567 + 1085 == 10652'
 '''
-#! /usr/local/bin/python3.2
+#! /usr/local/bin/python
 
 import re
 import itertools
@@ -34,10 +34,10 @@ def solve(puzzle):
 #             print(solution)
 
 while True:
-#    puzzle = input('Input a word equation [type "quit" to exit]: ')
+    puzzle = input('Input a word equation [type "quit" to exit]: ')
 #    puzzle = 'DAVE + SIENNA == KEN + SINGER'
 #    puzzle = 'SEND + MORE == MONEY'
-    puzzle = 'SIE * NNA == MARIA'
+#    puzzle = 'SIE * NNA == MARIA'
     print(puzzle)
     if puzzle == 'quit':
         print('Thanks for playing!')
@@ -45,10 +45,10 @@ while True:
     solution = solve(puzzle)
     if solution:
         print(solution)
-        break
+#        break
     else:
         print("Couldn't find a solution to that one.")
-        break
+#        break
 
 
 # Copyright (c) 2009, Raymond Hettinger, All rights reserved.

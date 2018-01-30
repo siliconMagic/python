@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 from scipy.optimize import minimize
 from matplotlib.pyplot import plot, scatter, show
-from pandas.io.data import DataReader
+from pandas_datareader import DataReader
 from datetime import datetime
 
 
