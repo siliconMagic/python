@@ -9,7 +9,7 @@ import itertools as it
 
 DICT = '/usr/share/dict/words'
 
-letter_rack = ['vlok','air','nirj','ayu']
+letter_rack = ['adtg','rota','enh','eai','ekpn']
 
 dictionary = [word.strip() for word in open(DICT).readlines() if len(word) == len(letter_rack)+1]
 
