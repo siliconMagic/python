@@ -1,4 +1,4 @@
 python
 ======
 
-Python source code for learning
+Python source code for learning python easily and efficiently.
